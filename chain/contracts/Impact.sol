@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
-// import "hardhat/console.sol";
+import "./interfaces/IChallenge.sol";
+import "hardhat/console.sol";
 
-contract Impact {
+contract Impact is IChallenge {
     address payable public owner;
     mapping(bytes32 => Challenge) public challenges;
 
