@@ -8,10 +8,12 @@ import { Header } from './pages/Header';
 
 import './App.css';
 import { Footer } from './pages/Footer';
+import { Auth } from './pages/Auth';
 
 function App() {
   return (
     <>
+      <Auth />
       <Header />
       <main className='App-main'>
         <BrowserRouter>
