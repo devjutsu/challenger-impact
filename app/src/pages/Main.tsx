@@ -3,9 +3,11 @@ import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useAppSelector, useAppDispatch } from '../hooks'
 import { ConnectWallet } from '../components/ConnectWallet';
+import { loggedIn } from '../slices/authSlice';
 
 export const Main = () => {
     const dispatch = useAppDispatch();
+    const isLoggedIn = useAppSelector(loggedIn);
     
     // const challengeStatus = useAppSelector(challengeStatus);
 
@@ -16,7 +18,9 @@ export const Main = () => {
 
                 <div>
                     <code>Main</code>
-                    <ConnectWallet />
+                    {!isLoggedIn && <ConnectWallet />}
+
+                    <code>...</code>
                 </div>
 
             </main>
