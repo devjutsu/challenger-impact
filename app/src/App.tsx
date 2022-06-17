@@ -1,12 +1,21 @@
 
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { Main } from './pages/Main';
+import { About } from './pages/About';
+
+import './App.css';
 
 function App() {
   return (
-    <Main />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path=":code" element={<Main />} />
+        <Route path="about" element={<About />} />
+      </Routes >
+    </BrowserRouter>
   );
 }
 
