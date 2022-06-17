@@ -8,9 +8,9 @@ export const Main = () => {
             <main>
                 <MenuIcon />
 
-                <p>
+                <div>
                     <code>Main</code>
-                </p>
+                </div>
                
             </main>
         </div>

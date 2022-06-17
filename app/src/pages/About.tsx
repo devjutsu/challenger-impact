@@ -3,14 +3,14 @@ import InfoIcon from '@mui/icons-material/Info';
 export const About = () => {
     return (
     <div>
-        <main>
+        <main className='App-main'>
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
             <InfoIcon />
 
-            <p>
+            <div>
                 <code>About</code>
-            </p>
+            </div>
 
         </main>
     </div>

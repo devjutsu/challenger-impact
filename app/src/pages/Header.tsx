@@ -7,9 +7,7 @@ export const Header = () => {
 
             <MenuBookIcon />
 
-            <p>
-                Header
-            </p>
+            Header
 
         </header>
     </div>
