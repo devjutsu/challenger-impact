@@ -22,7 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  border: 1px dotted silver;
+  border: 1px dotted #686c74;
 }
 .App-main {
   background-color: #282c34;
@@ -42,7 +42,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  border: 1px dotted silver;
+  border: 1px dotted #686c74;
 }
 .App-link {
   color: #61dafb;
