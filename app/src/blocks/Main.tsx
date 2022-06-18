@@ -10,7 +10,7 @@ import { HowItsWorking } from '../components/HowItsWorking';
 
 export const Main = () => {
     const dispatch = useAppDispatch();
-    const isLoggedIn = useAppSelector(loggedIn);
+    
     
     // const challengeStatus = useAppSelector(challengeStatus);
 
@@ -20,12 +20,9 @@ export const Main = () => {
                 <MenuIcon />
 
                 <div>
-                    {!isLoggedIn && <ConnectWallet />}
-
                     <Landing />
                     <JoinChallenge />
                     <HowItsWorking />
-
                 </div>
 
             </main>
