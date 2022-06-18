@@ -4,7 +4,7 @@ pragma solidity >=0.8.0;
 import "./interfaces/IChallenge.sol";
 import "hardhat/console.sol";
 
-contract Impact is IChallenge {
+contract Vow {
     address payable public owner;
     mapping(bytes32 => Challenge) public challenges;
 
@@ -27,5 +27,9 @@ contract Impact is IChallenge {
 
     constructor() {
         owner = payable(msg.sender);
+    }
+
+    function test() public pure returns (string memory) {
+        return '12345';
     }
 }
