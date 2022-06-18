@@ -4,12 +4,12 @@ pragma solidity >=0.8.0;
 import "./interfaces/IChallenge.sol";
 import "hardhat/console.sol";
 
-contract Vow {
-    address payable public owner;
+contract Challenge {
     mapping(bytes32 => Challenge) public challenges;
+    address payable creator;
 
-    struct Challenge {
-        address payable creator;
+    struct Engagement {
+        address payable person;
         Status status;
         uint256 funds;
     }
@@ -21,15 +21,15 @@ contract Vow {
 
     enum Status {
         None,
-        Playing,
+        InProgress,
         Completed
     }
 
     constructor() {
-        owner = payable(msg.sender);
+        creator = payable(msg.sender);
     }
 
     function test() public pure returns (string memory) {
-        return '12345';
+        return "12345";
     }
 }
