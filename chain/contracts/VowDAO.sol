@@ -7,15 +7,16 @@ contract VowDAO {
     address payable public owner;
     mapping(address => bool) public challenges;
 
-
-    constructor(address challengeAddress) {
+    constructor() {
         owner = payable(msg.sender);
-        challenges[challengeAddress] = true;
-
-        // @! adds challenge located there to this DAO
     }
 
     function test() public pure returns (string memory) {
         return "54321";
+    }
+
+    function addChallenge(address challengeAddress) public {
+        challenges[challengeAddress] = true;
+        // @! adds challenge located there to this DAO
     }
 }

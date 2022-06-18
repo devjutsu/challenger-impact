@@ -37,8 +37,8 @@
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/Vow.sol": {
-      "lastModificationDate": 1655572293565,
-      "contentHash": "fd286b877b3667ad6364ce408cdc4d6d",
+      "lastModificationDate": 1655574115220,
+      "contentHash": "007cb6feeb2e19b1f284448a7f32952d",
       "sourceName": "contracts/Vow.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -71,7 +71,7 @@
         ">=0.8.0"
       ],
       "artifacts": [
-        "Challenge"
+        "Vow"
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/interfaces/IChallenge.sol": {
