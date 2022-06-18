@@ -29,7 +29,7 @@ contract Challenge {
         creator = payable(msg.sender);
     }
 
-    function test() public pure returns (string memory) {
-        return "12345";
+    function ping() public pure returns (string memory) {
+        return "challenge";
     }
 }

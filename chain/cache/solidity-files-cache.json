@@ -36,10 +36,45 @@
         "console"
       ]
     },
-    "/Users/dev/Code/challenger-impact/chain/contracts/Vow.sol": {
-      "lastModificationDate": 1655574115220,
-      "contentHash": "007cb6feeb2e19b1f284448a7f32952d",
-      "sourceName": "contracts/Vow.sol",
+    "/Users/dev/Code/challenger-impact/chain/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1653657349167,
+      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/dev/Code/challenger-impact/chain/contracts/Challenge.sol": {
+      "lastModificationDate": 1655576509407,
+      "contentHash": "f0a9621aec288c23920a51406f218a45",
+      "sourceName": "contracts/Challenge.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -71,7 +106,7 @@
         ">=0.8.0"
       ],
       "artifacts": [
-        "Vow"
+        "Challenge"
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/interfaces/IChallenge.sol": {
@@ -107,6 +142,43 @@
       ],
       "artifacts": [
         "IChallenge"
+      ]
+    },
+    "/Users/dev/Code/challenger-impact/chain/contracts/VowDAO.sol": {
+      "lastModificationDate": 1655577311260,
+      "contentHash": "a042f24d2da273a34d3a63fbaa5160b5",
+      "sourceName": "contracts/VowDAO.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.0"
+      ],
+      "artifacts": [
+        "VowDAO"
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/interfaces/IChallenger.sol": {
@@ -146,41 +218,6 @@
         "IChallenger"
       ]
     },
-    "/Users/dev/Code/challenger-impact/chain/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1653657349167,
-      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
-      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC20"
-      ]
-    },
     "/Users/dev/Code/challenger-impact/chain/contracts/interfaces/IChallengerDao.sol": {
       "lastModificationDate": 1655570760439,
       "contentHash": "c54535e4b4c35b19b6919c842e544bdf",
@@ -214,43 +251,6 @@
       ],
       "artifacts": [
         "IChallengerDAO"
-      ]
-    },
-    "/Users/dev/Code/challenger-impact/chain/contracts/VowDAO.sol": {
-      "lastModificationDate": 1655574068733,
-      "contentHash": "b54b98efa550fdee0dcd1fbd8c9bc2b1",
-      "sourceName": "contracts/VowDAO.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "hardhat/console.sol"
-      ],
-      "versionPragmas": [
-        ">=0.8.0"
-      ],
-      "artifacts": [
-        "VowDAO"
       ]
     }
   }

@@ -11,12 +11,16 @@ contract VowDAO {
         owner = payable(msg.sender);
     }
 
-    function test() public pure returns (string memory) {
-        return "54321";
+    function ping() public pure returns (string memory) {
+        return "dao";
     }
 
     function addChallenge(address challengeAddress) public {
         challenges[challengeAddress] = true;
         // @! adds challenge located there to this DAO
+    }
+
+    function getChallenge(address challengeAddress) public view returns (bool) {
+        return challenges[challengeAddress];
     }
 }
