@@ -1,5 +1,6 @@
 import { useAppSelector, useAppDispatch } from '../hooks';
 import { loggedIn, login, logout } from "../slices/authSlice";
+import { Button } from '@mui/material';
 
 declare let window: any;
 
@@ -29,8 +30,6 @@ export const ConnectWallet = () => {
     }
 
     return (
-        <div className="flex justify-center mb-1">
-            <button className="btn btn-insert-coin" onClick={connectWallet}>Connect Metamask</button>
-        </div>
+        <Button className="btn btn-insert-coin" onClick={connectWallet}>Connect Metamask</Button>
     );
 }

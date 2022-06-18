@@ -1,6 +1,7 @@
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import Box from '@mui/material/Box';
+import { Button, Box } from '@mui/material';
 import { ConnectWallet } from '../components/ConnectWallet';
+import { CurrentAccount } from '../components/CurrentAccount';
 import { useAppSelector } from '../hooks';
 import { loggedIn } from '../slices/authSlice';
 
@@ -9,25 +10,25 @@ export const Header = () => {
 
     return (<div className="App">
         <header className="App-header">
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            <MenuBookIcon />
 
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', margin: '1rem' }}>
 
-                <div>
-                    Community
+                <div style={{ margin: '1rem' }}>
+                    <Button className="btn">Community</Button>
                 </div>
-                <div>
-                    Challenge
+                <div style={{ margin: '1rem' }}>
+                    <Button className="btn">Challenge</Button>
                 </div>
-                <div>
-                    Leaderboard
+                <div style={{ margin: '1rem' }}>
+                    <Button className="btn">Leaderboard</Button>
                 </div>
-                <div>
-                    LevelUP
+                <div style={{ margin: '1rem' }}>
+                    <Button className="btn">LevelUP</Button>
                 </div>
 
-                {!isLoggedIn && <ConnectWallet />}
+                <div style={{ margin: '1rem' }}>
+                    {!isLoggedIn ? <ConnectWallet /> : <CurrentAccount />}
+                </div>
 
             </Box>
 
