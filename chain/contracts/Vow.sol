@@ -4,8 +4,8 @@ pragma solidity >=0.8.0;
 import "./interfaces/IChallenge.sol";
 import "hardhat/console.sol";
 
-contract Challenge {
-    mapping(bytes32 => Challenge) public challenges;
+contract Vow {
+    mapping(bytes32 => Engagement) public challenges;
     address payable creator;
 
     struct Engagement {
