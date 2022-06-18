@@ -2,12 +2,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Main } from './pages/Main';
+import { Main } from './blocks/Main';
 import { About } from './pages/About';
-import { Header } from './pages/Header';
+import { Header } from './blocks/Header';
 
 import './App.css';
-import { Footer } from './pages/Footer';
+import { Footer } from './blocks/Footer';
 import { Auth } from './pages/Auth';
 
 function App() {
