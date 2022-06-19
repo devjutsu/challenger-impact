@@ -5,8 +5,10 @@ import "./interfaces/IChallenge.sol";
 import "hardhat/console.sol";
 
 contract Challenge {
-    mapping(bytes32 => Engagement) public challenges;
     address payable creator;
+    string name;
+
+    mapping(bytes32 => Engagement) public challenges;
 
     struct Engagement {
         address payable person;
@@ -25,11 +27,14 @@ contract Challenge {
         Completed
     }
 
-    constructor() {
+    constructor(string memory _name) {
         creator = payable(msg.sender);
+        name = _name;
     }
 
     function ping() public pure returns (string memory) {
         return "challenge";
     }
+
+
 }

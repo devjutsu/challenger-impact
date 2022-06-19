@@ -7,6 +7,10 @@ contract VowDAO {
     address payable public owner;
     mapping(address => bool) public challenges;
 
+    struct Challenge {
+        address addr;
+    }
+
     constructor() {
         owner = payable(msg.sender);
     }
@@ -22,5 +26,11 @@ contract VowDAO {
 
     function getChallenge(address challengeAddress) public view returns (bool) {
         return challenges[challengeAddress];
+    }
+
+    function acceptChallenge() public payable {
+
+        // @! should compare with specific challenge rate
+        require(msg.value >= 1 ether, "Deposit funds to play");
     }
 }

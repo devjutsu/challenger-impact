@@ -21,12 +21,21 @@ export const JoinChallenge = () => {
         const dao = new ethers.Contract(daoContractAddress, daoAbi, signer);
         const vow = new ethers.Contract(vowContractAddress, vowAbi, signer);
 
+
+
+        // @! dao.
+
         console.log('dao vow', dao, vow)
 
-        // --- @ prepare challenge by deploy.js
 
-        // @! join challenge (by id)
-        // 
+
+        // -- @ display all challenges inside this DAO
+
+        // @! call contract to join challenge (by address)
+        
+        // when the challenge is ongoing, allow to complete it
+        // stakeholders should vote
+        // arbitrage should verify
 
     }
 

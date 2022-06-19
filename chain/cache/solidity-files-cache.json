@@ -72,8 +72,8 @@
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/Challenge.sol": {
-      "lastModificationDate": 1655576509407,
-      "contentHash": "f0a9621aec288c23920a51406f218a45",
+      "lastModificationDate": 1655642619502,
+      "contentHash": "c470eaa4ed65f2e82ffbe8cf0c75c20e",
       "sourceName": "contracts/Challenge.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -145,8 +145,8 @@
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/VowDAO.sol": {
-      "lastModificationDate": 1655577311260,
-      "contentHash": "a042f24d2da273a34d3a63fbaa5160b5",
+      "lastModificationDate": 1655643158255,
+      "contentHash": "ff4a32c75f8499268380600f3c3142bc",
       "sourceName": "contracts/VowDAO.sol",
       "solcConfig": {
         "version": "0.8.9",
