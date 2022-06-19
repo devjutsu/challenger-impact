@@ -5,20 +5,35 @@ const path = require("path")
 async function main() {
   // await hre.run('compile');
 
-  const Impact = await hre.ethers.getContractFactory("Impact");
-  const impact = await Impact.deploy();
 
-  await impact.deployed();
+  const Dao = await hre.ethers.getContractFactory("VowDAO");
+  const dao = await Dao.deploy();
+  await dao.deployed();
 
-  var src = path.join(__dirname, '..', 'artifacts', 'contracts', 'Impact.sol', 'Impact.json');
-  const dst = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Impact.json');
+  var src = path.join(__dirname, '..', 'artifacts', 'contracts', 'VowDAO.sol', 'VowDAO.json');
+  const dst = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'VowDAO.json');
 
   fs.copyFile(src, dst, (err) => {
     if (err) throw err;
     else console.log('File was copied to utils');
   });
 
-  console.log("Impact deployed to:", impact.address);
+  console.log("DAO deployed to:", dao.address);
+  // ----------------------------
+
+  const Challenge = await hre.ethers.getContractFactory("Challenge");
+  const challenge = await Challenge.deploy();
+  await challenge.deployed();
+
+  var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
+  const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
+
+  fs.copyFile(src1, dst1, (err) => {
+    if (err) throw err;
+    else console.log('File was copied to utils');
+  });
+
+  console.log("Challenge deployed to:", challenge.address);
 }
 
 main()

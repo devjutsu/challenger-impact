@@ -19,15 +19,8 @@ export const CurrentAccount = () => {
             {isLoggedIn
                 ?
                 <>
-                    <div className="">
-                        <Blockies seed={loggedInUser ?? ''} />
-                    </div>
+                    <Blockies seed={loggedInUser ?? ''} />
                     {shortAddress()} on {loggedInChain}
-                    
-                    
-
-                    {/* <span className="auth-cell-part">
-                            </span> */}
                 </>
                 :
                 <></>

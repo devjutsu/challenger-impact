@@ -1,5 +1,5 @@
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import MenuIcon from '@mui/icons-material/Menu';
+import Blockies from 'react-blockies';
+
 import { Button, Box } from '@mui/material';
 import { ConnectWallet } from '../components/ConnectWallet';
 import { CurrentAccount } from '../components/CurrentAccount';
@@ -19,6 +19,7 @@ export const Header = () => {
                 <Button className="btn">Leaderboard</Button>
                 <Button className="btn">LevelUP</Button>
                 {!isLoggedIn ? <ConnectWallet /> : <CurrentAccount />}
+
             </Box>
 
 
