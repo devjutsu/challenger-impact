@@ -1,5 +1,5 @@
 export const JoinChallenge = () => {
-    return (<div>
+    return (<div className='App-joinchallenge'>
         Join Challenge!
     </div>)
 }

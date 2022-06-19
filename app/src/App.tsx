@@ -15,7 +15,7 @@ function App() {
     <>
       <Auth />
       <Header />
-      <main className='App-main'>
+      <main>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />} />

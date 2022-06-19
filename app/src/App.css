@@ -15,25 +15,15 @@
 
 .App-header {
   background-color: #282c34;
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #EEEEEE;
   border: 1px dotted #686c74;
 }
-.App-main {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 .App-footer {
   background-color: #282c34;
   display: flex;
@@ -41,9 +31,43 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #AAAAAA;
   border: 1px dotted #686c74;
 }
+
+.App-landing {
+  background-color: #282c34;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #EEEEEE;
+}
+
+.App-howitsworking {
+  min-height: 50vh;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #EEEEEE;
+}
+
+.App-joinchallenge {
+  background-color: #000000;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #686c74;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -52,6 +76,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
