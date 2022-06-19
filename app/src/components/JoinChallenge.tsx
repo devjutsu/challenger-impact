@@ -21,6 +21,7 @@ export const JoinChallenge = () => {
         const dao = new ethers.Contract(daoContractAddress, daoAbi, signer);
         const vow = new ethers.Contract(vowContractAddress, vowAbi, signer);
 
+        console.log('dao vow', dao, vow)
 
         // --- @ prepare challenge by deploy.js
 

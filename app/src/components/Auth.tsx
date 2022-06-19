@@ -56,6 +56,8 @@ export const Auth = () => {
           window.ethereum.on('connect', async (connectInfo: any) => { setChainName() });
           window.ethereum.on('disconnect', (error: any) => { console.log('disconnect wallet'); window.location.reload(); });
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
     return (<></>);
