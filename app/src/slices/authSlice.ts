@@ -33,9 +33,9 @@ export const authSlice = createSlice({
   export const { login, logout, setChainId, resetChainId } = authSlice.actions
   
   export const currentUser = (state: RootState) => state.auth.user
-  export const loggedIn = (state: RootState) => state.auth.user != null 
-                                              && state.auth.user != undefined 
-                                              && state.auth.user != '';
+  export const loggedIn = (state: RootState) => state.auth.user !== null 
+                                              && state.auth.user !== undefined 
+                                              && state.auth.user !== '';
   export const currentChain = (state: RootState) => state.auth.chainId
   
   export default authSlice.reducer

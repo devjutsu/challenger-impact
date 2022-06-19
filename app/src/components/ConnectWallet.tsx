@@ -1,5 +1,5 @@
-import { useAppSelector, useAppDispatch } from '../hooks';
-import { loggedIn, login, logout } from "../slices/authSlice";
+import { useAppDispatch } from '../hooks';
+import { login, logout } from "../slices/authSlice";
 import { Button } from '@mui/material';
 
 declare let window: any;
@@ -7,7 +7,6 @@ declare let window: any;
 export const ConnectWallet = () => {
 
     const dispatch = useAppDispatch();
-    const isLoggedIn = useAppSelector(loggedIn);
 
     const connectWallet = async () => {
 

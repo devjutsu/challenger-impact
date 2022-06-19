@@ -1,5 +1,3 @@
-import Blockies from 'react-blockies';
-
 import { Button, Box } from '@mui/material';
 import { ConnectWallet } from '../components/ConnectWallet';
 import { CurrentAccount } from '../components/CurrentAccount';

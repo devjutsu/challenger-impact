@@ -1,4 +1,4 @@
-import { REACT_APP_API, REACT_APP_DAO_CONTRACT } from "../config"
+import { REACT_APP_DAO_CONTRACT } from "../config"
 
 export const Landing = () => {
     return (

@@ -8,7 +8,7 @@ import { Header } from './blocks/Header';
 
 import './App.css';
 import { Footer } from './blocks/Footer';
-import { Auth } from './pages/Auth';
+import { Auth } from './components/Auth';
 
 function App() {
   return (

@@ -18,14 +18,15 @@ export const JoinChallenge = () => {
 
         const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
         const signer = provider.getSigner();
-        console.log('contract address;', daoContractAddress);
         const dao = new ethers.Contract(daoContractAddress, daoAbi, signer);
-        // signer.getAddress().then(o => console.log(o));
-        console.log('addr:', await signer.getAddress());
-
-        // Call join challenge (hardcoded id for now)
-
         const vow = new ethers.Contract(vowContractAddress, vowAbi, signer);
+
+
+        // --- @ prepare challenge by deploy.js
+
+        // @! join challenge (by id)
+        // 
+
     }
 
     return (<div className='App-joinchallenge'>
