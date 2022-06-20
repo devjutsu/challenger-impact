@@ -29,6 +29,6 @@ export const ConnectWallet = () => {
     }
 
     return (
-        <Button className="btn btn-insert-coin" onClick={connectWallet}>Connect Metamask</Button>
+        <Button variant="outlined" color="warning" className="btn btn-insert-coin" onClick={connectWallet}>Connect Metamask</Button>
     );
 }
