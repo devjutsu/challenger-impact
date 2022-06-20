@@ -1,6 +1,7 @@
 const hre = require("hardhat");
 const fs = require('fs');
-const path = require("path")
+const path = require("path");
+const { ethers } = require("hardhat");
 
 async function main() {
   // await hre.run('compile');
@@ -21,19 +22,46 @@ async function main() {
   console.log("DAO deployed to:", dao.address);
   // ----------------------------
 
-  const Challenge = await hre.ethers.getContractFactory("Challenge");
-  const challenge = await Challenge.deploy();
-  await challenge.deployed();
+  const signer = await hre.ethers.getSigner();
+  console.log('signer:', signer.address);
+  var sendTx = await signer.sendTransaction({to: '0x6148a120673A16e3f7BeAaAa2Fe5fa24B0803fCE', value: ethers.utils.parseEther("100.0")});
+  await sendTx.wait();
+  console.log('100 ETH sent');
+  
+  // to?: string,
+  // from?: string,
+  // nonce?: BigNumberish,
 
-  var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
-  const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
+  // gasLimit?: BigNumberish,
+  // gasPrice?: BigNumberish,
 
-  fs.copyFile(src1, dst1, (err) => {
-    if (err) throw err;
-    else console.log('File was copied to utils');
-  });
+  // data?: BytesLike,
+  // value?: BigNumberish,
+  // chainId?: number
 
-  console.log("Challenge deployed to:", challenge.address);
+  // type?: number;
+  // accessList?: AccessListish;
+
+  // maxPriorityFeePerGas?: BigNumberish;
+  // maxFeePerGas?: BigNumberish;
+
+  // customData?: Record<string, any>;
+  // ccipReadEnabled?: boolean;
+
+
+  // const Challenge = await hre.ethers.getContractFactory("Challenge");
+  // const challenge = await Challenge.deploy();
+  // await challenge.deployed();
+
+  // var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
+  // const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
+
+  // fs.copyFile(src1, dst1, (err) => {
+  //   if (err) throw err;
+  //   else console.log('File was copied to utils');
+  // });
+
+  // console.log("Challenge deployed to:", challenge.address);
 }
 
 main()
