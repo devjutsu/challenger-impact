@@ -24,12 +24,12 @@ async function main() {
 
   const signer = await hre.ethers.getSigner();
   console.log('signer:', signer.address);
-  console.log('old balance:', await signer.getBalance());
+  console.log('old balance:', ethers.utils.formatEther(await signer.getBalance()));
 
   var sendTx = await signer.sendTransaction({to: '0x6148a120673A16e3f7BeAaAa2Fe5fa24B0803fCE', value: ethers.utils.parseEther("100.0")});
   await sendTx.wait();
   console.log('100 ETH sent');
-  console.log('new balance:', await signer.getBalance());
+  console.log('new balance:', ethers.utils.formatEther(await signer.getBalance()));
   
   // to?: string,
   // from?: string,
