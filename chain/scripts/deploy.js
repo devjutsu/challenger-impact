@@ -2,10 +2,13 @@ const hre = require("hardhat");
 const fs = require('fs');
 const path = require("path");
 const { ethers } = require("hardhat");
+const { isCommunityResourcable } = require("@ethersproject/providers");
+require("@nomiclabs/hardhat-ethers");
 
 async function main() {
   // await hre.run('compile');
 
+  const testAddr = '0x6148a120673A16e3f7BeAaAa2Fe5fa24B0803fCE';
 
   const Dao = await hre.ethers.getContractFactory("VowDAO");
   const dao = await Dao.deploy();
@@ -26,11 +29,19 @@ async function main() {
   console.log('signer:', signer.address);
   console.log('old balance:', ethers.utils.formatEther(await signer.getBalance()));
 
-  var sendTx = await signer.sendTransaction({to: '0x6148a120673A16e3f7BeAaAa2Fe5fa24B0803fCE', value: ethers.utils.parseEther("100.0")});
+  var sendTx = await signer.sendTransaction({to: testAddr, value: ethers.utils.parseEther("100.0")});
   await sendTx.wait();
   console.log('100 ETH sent');
   console.log('new balance:', ethers.utils.formatEther(await signer.getBalance()));
-  
+
+  const provider = await hre.ethers.getDefaultProvider();
+  // console.log('provider:', provider);
+  const network = await provider.getNetwork();
+  console.log('network:', network);
+  console.log('signer network:', await signer.getChainId());
+  const bal = await provider.getBalance(testAddr);
+  console.log('tst balance:', ethers.utils.formatEther(bal));
+
   // to?: string,
   // from?: string,
   // nonce?: BigNumberish,
