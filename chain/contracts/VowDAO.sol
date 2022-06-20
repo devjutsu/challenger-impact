@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
+import "./interfaces/IChallenge.sol";
 import "hardhat/console.sol";
 
 contract VowDAO {
@@ -32,5 +33,23 @@ contract VowDAO {
 
         // @! should compare with specific challenge rate
         require(msg.value >= 1 ether, "Deposit funds to play");
+    }
+}
+
+
+interface ICounter {
+    function count() external view returns (uint);
+    function increment() external;
+}
+
+contract Interaction {
+    address counterAddr;
+
+    function setCounterAddr(address _counter) public payable {
+       counterAddr = _counter;
+    }
+
+    function getCount() external view returns (uint) {
+        return ICounter(counterAddr).count();
     }
 }

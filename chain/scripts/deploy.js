@@ -42,7 +42,9 @@ async function main() {
   const Challenge = await hre.ethers.getContractFactory("Challenge");
   const challenge = await Challenge.deploy({_name: "Hello World!"});
   await challenge.deployed();
-
+  console.log("Challenge deployed to:", challenge.address);
+  console.log("With name:", await challenge.call.getName());
+  
   var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
   const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
 
@@ -51,7 +53,6 @@ async function main() {
     else console.log('File was copied to utils');
   });
 
-  console.log("Challenge deployed to:", challenge.address);
 }
 
 main()

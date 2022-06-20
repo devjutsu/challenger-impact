@@ -72,8 +72,8 @@
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/Challenge.sol": {
-      "lastModificationDate": 1655642619502,
-      "contentHash": "c470eaa4ed65f2e82ffbe8cf0c75c20e",
+      "lastModificationDate": 1655757796342,
+      "contentHash": "61f2d00d3d2d154db45ec69c1c69d144",
       "sourceName": "contracts/Challenge.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -110,8 +110,8 @@
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/interfaces/IChallenge.sol": {
-      "lastModificationDate": 1655570883780,
-      "contentHash": "cd81bea784fc2b7be63c7d2e013f78d5",
+      "lastModificationDate": 1655756716219,
+      "contentHash": "b99e9fc4f561b2baa7eb2949dc533045",
       "sourceName": "contracts/interfaces/IChallenge.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -145,8 +145,8 @@
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/VowDAO.sol": {
-      "lastModificationDate": 1655643158255,
-      "contentHash": "ff4a32c75f8499268380600f3c3142bc",
+      "lastModificationDate": 1655757679411,
+      "contentHash": "304548b89f73a5e02198e64e0534ce65",
       "sourceName": "contracts/VowDAO.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -172,19 +172,22 @@
         }
       },
       "imports": [
+        "./interfaces/IChallenge.sol",
         "hardhat/console.sol"
       ],
       "versionPragmas": [
         ">=0.8.0"
       ],
       "artifacts": [
+        "ICounter",
+        "Interaction",
         "VowDAO"
       ]
     },
-    "/Users/dev/Code/challenger-impact/chain/contracts/interfaces/IChallenger.sol": {
-      "lastModificationDate": 1655570807151,
-      "contentHash": "5e3fdc1d892d25e11acf46c7464a22d3",
-      "sourceName": "contracts/interfaces/IChallenger.sol",
+    "/Users/dev/Code/challenger-impact/chain/contracts/interfaces/IVowDAO.sol": {
+      "lastModificationDate": 1655756792670,
+      "contentHash": "0f46d44a125f93e5c43593ec479002f4",
+      "sourceName": "contracts/interfaces/IVowDAO.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -215,42 +218,7 @@
         ">=0.8.0"
       ],
       "artifacts": [
-        "IChallenger"
-      ]
-    },
-    "/Users/dev/Code/challenger-impact/chain/contracts/interfaces/IChallengerDao.sol": {
-      "lastModificationDate": 1655570760439,
-      "contentHash": "c54535e4b4c35b19b6919c842e544bdf",
-      "sourceName": "contracts/interfaces/IChallengerDao.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.8.0"
-      ],
-      "artifacts": [
-        "IChallengerDAO"
+        "IVowDAO"
       ]
     }
   }
