@@ -38,34 +38,10 @@ async function main() {
   // console.log('provider:', provider);
   const network = await provider.getNetwork();
   console.log('network:', network);
-  console.log('signer network:', await signer.getChainId());
-  const bal = await provider.getBalance(testAddr);
-  console.log('tst balance:', ethers.utils.formatEther(bal));
 
-  // to?: string,
-  // from?: string,
-  // nonce?: BigNumberish,
-
-  // gasLimit?: BigNumberish,
-  // gasPrice?: BigNumberish,
-
-  // data?: BytesLike,
-  // value?: BigNumberish,
-  // chainId?: number
-
-  // type?: number;
-  // accessList?: AccessListish;
-
-  // maxPriorityFeePerGas?: BigNumberish;
-  // maxFeePerGas?: BigNumberish;
-
-  // customData?: Record<string, any>;
-  // ccipReadEnabled?: boolean;
-
-
-  // const Challenge = await hre.ethers.getContractFactory("Challenge");
-  // const challenge = await Challenge.deploy();
-  // await challenge.deployed();
+  const Challenge = await hre.ethers.getContractFactory("Challenge");
+  const challenge = await Challenge.deploy({_name: "Hello World!"});
+  await challenge.deployed();
 
   // var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
   // const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
