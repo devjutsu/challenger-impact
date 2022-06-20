@@ -43,15 +43,15 @@ async function main() {
   const challenge = await Challenge.deploy({_name: "Hello World!"});
   await challenge.deployed();
 
-  // var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
-  // const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
+  var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
+  const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
 
-  // fs.copyFile(src1, dst1, (err) => {
-  //   if (err) throw err;
-  //   else console.log('File was copied to utils');
-  // });
+  fs.copyFile(src1, dst1, (err) => {
+    if (err) throw err;
+    else console.log('File was copied to utils');
+  });
 
-  // console.log("Challenge deployed to:", challenge.address);
+  console.log("Challenge deployed to:", challenge.address);
 }
 
 main()
