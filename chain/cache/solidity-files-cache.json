@@ -72,8 +72,8 @@
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/Challenge.sol": {
-      "lastModificationDate": 1655757796342,
-      "contentHash": "61f2d00d3d2d154db45ec69c1c69d144",
+      "lastModificationDate": 1655758904038,
+      "contentHash": "6ccb90de4e3ec0038d02138e1e7a0bde",
       "sourceName": "contracts/Challenge.sol",
       "solcConfig": {
         "version": "0.8.9",

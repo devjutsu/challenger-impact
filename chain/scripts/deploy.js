@@ -40,11 +40,13 @@ async function main() {
   console.log('network:', network);
 
   const Challenge = await hre.ethers.getContractFactory("Challenge");
-  const challenge = await Challenge.deploy({_name: "Hello World!"});
+  const challenge = await Challenge.deploy("Hello World!");
   await challenge.deployed();
   console.log("Challenge deployed to:", challenge.address);
-  console.log("With name:", await challenge.call.getName());
-  
+
+  const contract = await hre.ethers.getContractAt("Challenge", challenge.address);
+  console.log("With name:", await contract.functions.getName());
+
   var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
   const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
 

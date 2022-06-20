@@ -28,6 +28,7 @@ contract Challenge {
     }
 
     constructor(string memory _name) {
+        console.log('constructed with name:', _name);
         creator = payable(msg.sender);
         name = _name;
     }
@@ -37,6 +38,7 @@ contract Challenge {
     }
 
     function getName() public view returns (string memory) {
+        console.log('checking name:', name);
         return name;
     }
 }
