@@ -5,8 +5,8 @@ pragma solidity >=0.8.0;
 
 
 interface IChallenge {
-    function init() external;
-    function lastCallBlock() external view returns(uint);
-    function attempt() external;
-    function finalize() external;
+    // function init() external;
+    // function lastCallBlock() external view returns(uint);
+    // function attempt() external;
+    // function finalize() external;
 }
