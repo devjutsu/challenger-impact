@@ -1,7 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
 
-const fs = require("fs");
-
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -23,7 +21,7 @@ task("mine", "Mines blocks")
 });
 
 
-task("faucet", "Sends ETH and tokens to an address")
+task("faucet", "Sends ETH to an address")
   .addPositionalParam("receiver", "The address that will receive them")
   .setAction(async ({ receiver }, { ethers }) => {
     if (network.name === "hardhat") {
@@ -34,27 +32,13 @@ task("faucet", "Sends ETH and tokens to an address")
       );
     }
 
-    const addressesFile =
-      __dirname + "/../frontend/src/contracts/contract-address.json";
+    // const token = await ethers.getContractAt("Token", address.Token);
+    // const [sender] = await ethers.getSigners();
 
-    if (!fs.existsSync(addressesFile)) {
-      console.error("You need to deploy your contract first");
-      return;
-    }
+    // const tx = await token.transfer(receiver, 100);
+    // await tx.wait();
 
-    const addressJson = fs.readFileSync(addressesFile);
-    const address = JSON.parse(addressJson);
-
-    if ((await ethers.provider.getCode(address.Token)) === "0x") {
-      console.error("You need to deploy your contract first");
-      return;
-    }
-
-    const token = await ethers.getContractAt("Token", address.Token);
     const [sender] = await ethers.getSigners();
-
-    const tx = await token.transfer(receiver, 100);
-    await tx.wait();
 
     const tx2 = await sender.sendTransaction({
       to: receiver,
@@ -62,7 +46,7 @@ task("faucet", "Sends ETH and tokens to an address")
     });
     await tx2.wait();
 
-    console.log(`Transferred 1 ETH and 100 tokens to ${receiver}`);
+    console.log(`Transferred 1 ETH to ${receiver}`);
   });
 
 // You need to export an object to set up your config
