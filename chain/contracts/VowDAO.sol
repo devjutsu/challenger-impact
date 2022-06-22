@@ -23,13 +23,11 @@ contract VowDAO is IVowDAO {
         return IChallenge(_contract).getName();
     }
 
-    function addChallenge(string calldata name) public {
+    function addChallenge(address _challengeContract) public {
         console.log('Adding Challenge');
-        Challenge c = new Challenge(name);
-
-        challenges[address(c)] = true;
-        console.log(address(c));
+        challenges[_challengeContract] = true;
         challengeCount++;
+        console.log(_challengeContract);
     }
 
     function getChallenge(address challengeAddress) public view returns (bool) {

@@ -40,28 +40,24 @@ async function main() {
   const network = await provider.getNetwork();
   console.log('# network:', network.chainId, network.name);
 
-  // const Challenge = await hre.ethers.getContractFactory("Challenge");
-  // const challenge = await Challenge.deploy("Hello World!");
-  // await challenge.deployed();
-  // console.log("Challenge deployed to:", challenge.address);
+  const Challenge = await hre.ethers.getContractFactory("Challenge");
+  const challenge = await Challenge.deploy("Hello World!");
+  await challenge.deployed();
+  console.log("Challenge deployed to:", challenge.address);
 
-  // var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
-  // const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
+  var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
+  const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
 
-  // fs.copyFile(src1, dst1, (err) => {
-  //   if (err) throw err;
-  //   else console.log('File was copied to utils');
-  // });
+  fs.copyFile(src1, dst1, (err) => {
+    if (err) throw err;
+    else console.log('File was copied to utils');
+  });
 
-  // const chalContract = await hre.ethers.getContractAt("Challenge", challenge.address);
-  // console.log("With name:", await chalContract.functions.getName());
-
+  const chalContract = await hre.ethers.getContractAt("Challenge", challenge.address);
+  console.log("With name:", await chalContract.functions.getName());
 
   const daoContract = await hre.ethers.getContractAt("VowDAO", dao.address);
-  const addChallengeTx = await daoContract.functions.addChallenge('Hello, DAO!');
-  await addChallengeTx.wait();
-  // console.log('# ch in dao:', await daoContract.functions.getName(addChallengeTx));
-  console.log('# ch in dao:', addChallengeTx);
+  console.log('# ch in dao:', await daoContract.functions.getName(challenge.address));
 
 }
 

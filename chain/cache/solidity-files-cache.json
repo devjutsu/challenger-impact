@@ -145,8 +145,8 @@
       ]
     },
     "/Users/dev/Code/challenger-impact/chain/contracts/VowDAO.sol": {
-      "lastModificationDate": 1655923718899,
-      "contentHash": "74a14e26c2da99513e68790c1b7be038",
+      "lastModificationDate": 1655925288839,
+      "contentHash": "ef1b823cbbf402619c111cef8f104c65",
       "sourceName": "contracts/VowDAO.sol",
       "solcConfig": {
         "version": "0.8.9",
