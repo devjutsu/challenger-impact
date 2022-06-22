@@ -59,6 +59,25 @@ async function main() {
   const daoContract = await hre.ethers.getContractAt("VowDAO", dao.address);
   console.log('# ch in dao:', await daoContract.functions.getName(challenge.address));
 
+
+  const chalToSave = {address: challenge.address};
+  const chalData = JSON.stringify(chalToSave, null, 4);
+  const challengeDst = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.address.json');
+  fs.writeFileSync(challengeDst, chalData, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
+
+  const daoToSave = {address: dao.address};
+  const daoData = JSON.stringify(daoToSave, null, 4);
+  const daoDst = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'VowDAO.address.json');
+  fs.writeFileSync(daoDst, daoData, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
+
 }
 
 main()
