@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require("path");
 const { ethers } = require("hardhat");
 const { isCommunityResourcable } = require("@ethersproject/providers");
+const { stripVTControlCharacters } = require("util");
 require("@nomiclabs/hardhat-ethers");
 
 async function main() {
@@ -30,7 +31,7 @@ async function main() {
   console.log('signer:', signer.address);
   console.log('old balance:', ethers.utils.formatEther(await signer.getBalance()));
 
-  var sendTx = await signer.sendTransaction({to: testAddr, value: ethers.utils.parseEther("100.0")});
+  var sendTx = await signer.sendTransaction({ to: testAddr, value: ethers.utils.parseEther("100.0") });
   await sendTx.wait();
   console.log('100 ETH sent');
   console.log('new balance:', ethers.utils.formatEther(await signer.getBalance()));
@@ -44,8 +45,14 @@ async function main() {
   await challenge.deployed();
   console.log("Challenge deployed to:", challenge.address);
 
-  const contract = await hre.ethers.getContractAt("Challenge", challenge.address);
-  console.log("With name:", await contract.functions.getName());
+  const chalContract = await hre.ethers.getContractAt("Challenge", challenge.address);
+  console.log("With name:", await chalContract.functions.getName());
+
+  const daoContract = await hre.ethers.getContractAt("VowDAO", dao.address);
+  console.log('# ch in dao:', await daoContract.functions.getName(challenge.address));
+
+
+
 
 
   var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
