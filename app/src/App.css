@@ -49,7 +49,6 @@
 
 .App-howitsworking {
   min-height: 50vh;
-  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,6 +66,16 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #686c74;
+}
+
+.Howitsworking-block {
+  min-height: 20vh;
+  opacity: .8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
 }
 
 .App-link {
