@@ -4,7 +4,7 @@ pragma solidity >=0.8.0;
 import "./interfaces/IChallenge.sol";
 import "hardhat/console.sol";
 
-contract Challenge {
+contract Challenge is IChallenge {
     address payable creator;
     string name;
 
@@ -33,11 +33,18 @@ contract Challenge {
         name = _name;
     }
 
-    function ping() public pure returns (string memory) {
+    function getResult() external pure returns(uint){
+      uint a = 1; 
+      uint b = 2;
+      uint result = a + b;
+      return result;
+   }
+
+    function ping() external pure returns (string memory) {
         return "challenge";
     }
 
-    function getName() public view returns (string memory) {
+    function getName() external view returns (string memory) {
         console.log('checking name:', name);
         return name;
     }
