@@ -24,11 +24,12 @@ contract VowDAO is IVowDAO {
     }
 
     function addChallenge(string calldata name) public {
+        console.log('Adding Challenge');
         Challenge c = new Challenge(name);
 
         challenges[address(c)] = true;
+        console.log(address(c));
         challengeCount++;
-        // @! adds challenge located there to this DAO
     }
 
     function getChallenge(address challengeAddress) public view returns (bool) {
@@ -36,7 +37,8 @@ contract VowDAO is IVowDAO {
     }
 
     function acceptChallenge() public payable {
-        // @! should compare with specific challenge rate
         require(msg.value >= 1 ether, "Deposit funds to play");
+
+        // @! should compare with specific challenge rate
     }
 }
