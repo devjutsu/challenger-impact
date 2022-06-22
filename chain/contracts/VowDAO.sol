@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
+import "./interfaces/IVowDAO.sol";
 import "./interfaces/IChallenge.sol";
 import "hardhat/console.sol";
 
-contract VowDAO {
+contract VowDAO is IVowDAO {
     address payable public owner;
     mapping(address => bool) public challenges;
 
@@ -18,6 +19,10 @@ contract VowDAO {
 
     function ping() public pure returns (string memory) {
         return "dao";
+    }
+
+    function getName(address _contract) external view returns (string memory) {
+        return IChallenge(_contract).getName();
     }
 
     function addChallenge(address challengeAddress) public {
