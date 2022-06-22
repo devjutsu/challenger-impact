@@ -9,6 +9,7 @@ async function main() {
   // await hre.run('compile');
 
   const testAddr = '0x6148a120673A16e3f7BeAaAa2Fe5fa24B0803fCE';
+  const provider = await hre.ethers.getDefaultProvider();
 
   const Dao = await hre.ethers.getContractFactory("VowDAO");
   const dao = await Dao.deploy();
@@ -34,10 +35,9 @@ async function main() {
   console.log('100 ETH sent');
   console.log('new balance:', ethers.utils.formatEther(await signer.getBalance()));
 
-  const provider = await hre.ethers.getDefaultProvider();
   // console.log('provider:', provider);
   const network = await provider.getNetwork();
-  console.log('network:', network);
+  console.log('# network:', network.chainId, network.name);
 
   const Challenge = await hre.ethers.getContractFactory("Challenge");
   const challenge = await Challenge.deploy("Hello World!");
@@ -46,6 +46,7 @@ async function main() {
 
   const contract = await hre.ethers.getContractAt("Challenge", challenge.address);
   console.log("With name:", await contract.functions.getName());
+
 
   var src1 = path.join(__dirname, '..', 'artifacts', 'contracts', 'Challenge.sol', 'Challenge.json');
   const dst1 = path.join(__dirname, '..', '..', 'app', 'src', 'utils', 'Challenge.json');
