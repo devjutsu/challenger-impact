@@ -1,7 +1,8 @@
+import { Button } from "@mui/material"
+
 export const WinButton = () => {
     return (
         <div className=''>
-            <div>Win</div>
-
+            <Button>Won</Button>
         </div>)
 }

@@ -1,8 +1,9 @@
+import { LostButton } from "./LostButton"
+import { WinButton } from "./WinButton"
+
 export const Finish = () => {
     return (
         <div className=''>
-            <div>Win</div>
-            <div>Lose</div>
-
+            <WinButton /> <LostButton />
         </div>)
 }

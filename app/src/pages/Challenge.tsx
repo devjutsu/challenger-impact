@@ -3,6 +3,5 @@ export const Challenge = () => {
         <div className=''>
             <div>Challenge</div>
             <div>Ongoing</div>
-
         </div>)
 }

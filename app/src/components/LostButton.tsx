@@ -1,6 +1,8 @@
+import { Button } from "@mui/material"
+
 export const LostButton = () => {
     return (
         <div className=''>
-            <div>Lost</div>
+            <Button>Lost</Button>
         </div>)
 }
