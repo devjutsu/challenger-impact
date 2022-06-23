@@ -28,7 +28,6 @@ export const JoinChallenge = () => {
         console.log('dao vow', dao, vow)
 
 
-
         // -- @ display all challenges inside this DAO
 
         // @! call contract to join challenge (by address)

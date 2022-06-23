@@ -1,6 +1,6 @@
 export const Challenge = () => {
     return (
-        <div className='App-landing'>
+        <div className=''>
             <div>Challenge</div>
             <div>Ongoing</div>
 
